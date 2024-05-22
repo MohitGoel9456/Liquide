@@ -1,0 +1,30 @@
+{
+    "type": "container",
+    "styles": {},
+    "children": [
+        {
+            "type": "card",
+            "styles": {},
+            "children": [
+                {
+                    "type": "tab",
+                    "styles": {},
+                    "content": [
+                        {
+                            "title": "tab 1",
+                            "key": "tab1",
+                            "value": "tab 1 info",
+                            "styles": {}
+                        },
+                        {
+                            "title": "tab 2",
+                            "key": "tab2",
+                            "value": "tab 2 info",
+                            "styles": {}
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
