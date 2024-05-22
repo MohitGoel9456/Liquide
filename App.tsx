@@ -8,7 +8,7 @@
 import React from 'react';
 import {
   SafeAreaView,
-  useColorScheme,
+  StyleSheet
 } from 'react-native';
 
 import {
@@ -17,17 +17,18 @@ import {
 import HomeScreen from './src/screens/HomeScreen';
 
 function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
+    <SafeAreaView style={styles.container}>
       <HomeScreen />
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  }
+})
 
 export default App;

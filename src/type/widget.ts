@@ -2,37 +2,27 @@
 
 import { ViewStyle } from 'react-native';
 
-export interface Styles {
-    style?: ViewStyle;
+export type Styles = {
+    styles?: ViewStyle;
 }
 
-export interface TabContent {
+export type TabContent = Styles & {
     title: string;
     key: string;
     value: string;
-    styles: ViewStyle;
 }
 
-export interface Tab {
+export type Tab = Styles & {
     type: 'tab';
-    styles: ViewStyle;
     content: TabContent[];
 }
 
-export interface Card {
+export type Card = Styles & {
     type: 'card';
-    styles: ViewStyle;
     children: Tab[];
 }
 
-export interface Container {
+export type Container = Styles & {
     type: 'container';
-    styles: ViewStyle;
-    children: Card[];
-}
-
-export interface WidgetData {
-    type: 'container';
-    styles: ViewStyle;
     children: Card[];
 }

@@ -6,13 +6,14 @@ import {
 } from 'react-native';
 import { colors } from "../colors";
 
-type Iprops = {
+type Card = {
     containerStyle?: ViewStyle;
     children: JSX.Element;
 }
 
-export const CardComponent: React.FC<Iprops> = (props: Iprops) => {
+export const CardComponent = (props: Card) => {
     const { containerStyle, children } = props;
+
     return (
         <View style={[styles.card, containerStyle]}>
             {children}
