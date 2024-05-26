@@ -51,3 +51,11 @@ I am using server driven UI approach which helps me rendering the UI dynamically
 - src/screens: Contains the HomeScreen component which is the main entry point for rendering the components defined in data.json.
 - src/types: Contains TypeScript type definitions.
 - src/constants: Contains color codes for app.
+
+### Scalable
+- We can add n number of keys in KeysToComponentMap as it renders UI dynamically.
+- We can write service layer to handle api calls.
+- We can use state management libraries like Redux or context API.
+- We can create Reusable component like a TextView to keep the same font for entire app.
+- Testing frameworks like jest can be used.
+- We can use memoization,pagination or infinte scroll and lazy loading for performance.
