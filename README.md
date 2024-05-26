@@ -4,11 +4,9 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
-## Step 1: Start the Metro Server
+## Step 1: Install the dependencies
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
-
-To start Metro, run the following command from the _root_ of your React Native project:
+Use the follwoing command to install the required dependencies
 
 ```bash
 # using npm
@@ -42,12 +40,14 @@ npm run ios
 yarn ios
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+## Design Approach
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+### Dynamic Component Rendering
+I am using server driven UI approach which helps me rendering the UI dynamically. Based on different component type provided in the json data which acts as React Component.The KeysToComponentMap object is used to determine which React component to render based on the type property in the JSON configuration.This approach helps us to change the UI on the fly from backend without making changes to the frontend and without making builds and releasing builds.
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+### Project Structure
+- src/components: Contains the individual reusable React components like CardComponent and TabComponent.
+- src/data: Contains the data.json file which defines the structure and content of the components to be rendered.
+- src/screens: Contains the HomeScreen component which is the main entry point for rendering the components defined in data.json.
+- src/types: Contains TypeScript type definitions.
+- src/constants: Contains color codes for app.
