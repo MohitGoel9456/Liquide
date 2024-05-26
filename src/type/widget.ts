@@ -26,3 +26,11 @@ export type Container = Styles & {
     type: 'container';
     children: Card[];
 }
+
+export type Element = {
+    type: string;
+    styles?: any;
+    children?: Element[];
+    content?: TabContent[];
+  };
+

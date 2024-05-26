@@ -3,32 +3,29 @@ import {
     View,
     StyleSheet,
 } from 'react-native';
-import { CardComponent } from "../components/card/CardComponent";
-import TabComponent from "../components/tabComponent/TabComponent";
+import { KeysToComponentMap } from "../components/index";
 import data from '../data/data.json';
+import { Element, TabContent } from "../type/widget";
 
 const HomeScreen = () => {
 
-    const renderComponent = (component: any) => {
-        switch (component?.type) {
-            case 'container':
-                return <View style={[styles.container, component.styles]}>{component.children?.map((child: any) => renderComponent(child))}</View>;
-            case 'card':
-                return <CardComponent containerStyle={component.styles}>{component.children?.map((child: any) => renderComponent(child))}</CardComponent>;
-            case 'tab':
-                return (
-                    <TabComponent tabs={component.content} />
-                );
-            default:
-                return null;
+    const renderer = (component: Element): JSX.Element => {
+        if (typeof KeysToComponentMap[component.type] !== "undefined") {
+            const children = component.children ? component.children.map(c => renderer(c)) : null;
+            return React.createElement(
+                KeysToComponentMap[component.type],
+                {...component.styles, tabs: component.content, containerStyle: component.styles }, // Spread additional props and styles, including a key
+                children
+            );
         }
+        return <View/>; // Handle cases where the component type is undefined
     };
 
     return (
-        <>
-            {renderComponent(data)}
-        </>
-    )
+        <View style={styles.container}>
+            {renderer(data)}
+        </View>
+    );
 }
 
 const styles = StyleSheet.create({
