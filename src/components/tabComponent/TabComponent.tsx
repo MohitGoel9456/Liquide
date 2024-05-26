@@ -7,7 +7,7 @@ import Animated, {
     runOnJS,
 } from 'react-native-reanimated';
 import { TabContent } from '../../type/widget';
-import { colors } from '../colors';
+import { colors } from '../../constants/colors';
 import { LineComponent } from '../lineComponent/LineComponent';
 
 type IProps = {

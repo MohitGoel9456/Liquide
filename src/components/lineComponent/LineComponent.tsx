@@ -4,7 +4,7 @@ import {
     StyleSheet,
     ViewStyle
 } from 'react-native';
-import { colors } from "../colors";
+import { colors } from "../../constants/colors";
 
 type IProps = {
     lineStyle?: ViewStyle

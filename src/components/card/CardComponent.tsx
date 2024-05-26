@@ -4,7 +4,7 @@ import {
     ViewStyle,
     StyleSheet
 } from 'react-native';
-import { colors } from "../colors";
+import { colors } from "../../constants/colors";
 
 type Card = {
     containerStyle?: ViewStyle;
